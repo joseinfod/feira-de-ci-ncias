@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="/video">
+  <link rel="stylesheet" href="/image">
+  <link rel="stylesheet" href="feira.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feira de Ciências</title>
+</head>
+
+<body>
+  <header class="topo">
+    <button onclick="aumentarFonte()">A+</button>
+    <button onclick="diminuirFonte()">A-</button>
+  </header>
+
+  <section id="galeria">
+    <h1 class="titulo-secao">Galeria de Fotos</h1>
+    <div class="slideshow">
+      <button class="btn-slide" onclick="voltarFoto()">&#10094;</button>
+      <img id="fotoAtiva" src="img (1).jpeg" alt="Foto da galeria">
+      <button class="btn-slide" onclick="proximaFoto()">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="videos">
+    <h1 class="titulo-secao">Vídeos do Projeto</h1>
+    <div class="grade-videos">
+      <video src="video/video (1).mp4" controls></video>
+      <video src="video/video (2).mp4" controls></video>
+      <video src="video/video (3).mp4" controls></video>
+      <video src="video/video (4).mp4" controls></video>
+      <video src="video/video (5).mp4" controls></video>
+    </div>
+  </section>
+
+  <section id="rodape">
+    <div class="projeto">
+      <img src="image/iscola.png" alt="logo">
+      <div class="informacoes-rodape">
+        <p>© 2025 Feira de Ciências. Todos os direitos reservados.</p>
+        <p>Desenvolvido por alunos do E.E. José Ephim Mindlin</p>
+      </div>
+    </div>
+
+    <div class="caixa-programadores">
+      <p><strong>Programadores</strong></p>
+      <ul>
+        <li>Gustavo Ferreira</li>
+        <li>José Arqueles</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    function aumentarFonte() {
+      document.body.style.fontSize = "larger";
+    }
+    function diminuirFonte() {
+      document.body.style.fontSize = "smaller";
+    }
+
+    let fotos = [
+      "image/img (1).jpeg", "image/img (2).jpeg", "image/img (3).jpeg", "image/img (4).jpeg", "image/img (5).jpeg",
+      "image/img (6).jpeg", "image/img (7).jpeg", "image/img (8).jpeg", "image/img (9).jpeg", "image/img (10).jpeg",
+      "image/img (11).jpeg", "image/img (12).jpeg", "image/img (13).jpeg", "image/img (14).jpeg", "image/img (15).jpeg",
+      "image/img (16).jpeg", "image/img (17).jpeg", "image/img (18).jpeg", "image/img (19).jpeg", "image/img (20).jpeg",
+      "image/img (21).jpeg", "image/img (22).jpeg", "image/img (23).jpeg", "image/img (24).jpeg", "image/img (25).jpeg",
+      "image/img (26).jpeg", "image/img (27).jpeg", "image/img (28).jpeg", "image/img (29).jpeg", "image/img (30).jpeg",
+      "image/img (31).jpeg", "image/img (32).jpeg", "image/img (33).jpeg", "image/img (34).jpeg", "image/img.jpeg", "image/banner.jpg"
+    ];
+    let indexFoto = 0;
+
+    function mostrarFoto() {
+      document.getElementById("fotoAtiva").src = fotos[indexFoto];
+    }
+
+    function proximaFoto() {
+      indexFoto = (indexFoto + 1) % fotos.length;
+      mostrarFoto();
+    }
+
+    function voltarFoto() {
+      indexFoto = (indexFoto - 1 + fotos.length) % fotos.length;
+      mostrarFoto();
+    }
+
+    setInterval(proximaFoto, 4000);
+  </script>
+</body>
+
+</html>

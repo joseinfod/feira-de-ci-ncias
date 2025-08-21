@@ -1,0 +1,239 @@
+/* Fundo animado */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(45deg, #00aaff, #0074D9, #005f99, #001f3f);
+  background-size: 400% 400%;
+  animation: fundo 15s ease infinite;
+  text-align: center;
+}
+
+@keyframes fundo {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Topo botões */
+.topo {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.topo button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* Títulos grandes */
+.titulo-secao {
+  font-size: 2.5em;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  color: rgb(227, 243, 255);
+}
+
+/* Slideshow */
+.slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  transition: transform 0.5s;
+}
+
+.slideshow img:hover {
+  transform: scale(1.03);
+}
+
+.btn-slide {
+  background: none;
+  border: none;
+  font-size: 4em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Vídeos */
+.grade-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grade-videos video {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Rodapé */
+#rodape {
+  top: 30px;
+  padding: 20px;
+  background-color: #001f3f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  position: relative;
+}
+
+#rodape .projeto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rodape img {
+  left:  100%;
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+#rodape .informacoes-rodape {
+  text-align: center;
+}
+
+#rodape .informacoes-rodape p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+#rodape .caixa-programadores {
+  top: 10%;
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#rodape .caixa-programadores p {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+#rodape .caixa-programadores ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1em;
+  text-align: right;
+}
+
+#rodape .caixa-programadores li {
+  margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 748px) {
+  #rodape {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #rodape .projeto {
+    align-items: center;
+  }
+
+  #rodape .caixa-programadores {
+    text-align: center;
+    position: static;
+    margin-top: 20px;
+  }
+
+  #rodape .informacoes-rodape {
+    text-align: center;
+  }
+
+  #rodape .projeto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #rodape .caixa-programadores {
+    text-align: left;
+    position: static;
+    margin-top: 20px;
+  }
+
+  #rodape .informacoes-rodape {
+    text-align: center;
+  }
+
+  #rodape {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #rodape .caixa-programadores {
+    text-align: center;
+    position: static;
+    margin-top: 20px;
+  }
+
+  #rodape p {
+    font-size: 0.9em;
+  }
+
+  .titulo-secao {
+    font-size: 1.8em;
+  }
+
+  .slideshow img {
+    width: 95%;
+  }
+
+  .slideshow {
+    flex-direction: column;
+  }
+
+  .slideshow button {
+    font-size: 1.5em;
+  }
+
+  .grade-videos {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .caixa-programadores {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .titulo-secao {
+    font-size: 2em;
+    margin: 30px 0 10px 0;
+  }
+
+  .topo button {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slideshow img {
+    width: 60%;
+  }
+}
